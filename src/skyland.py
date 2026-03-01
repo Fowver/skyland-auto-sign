@@ -11,7 +11,7 @@ from urllib import parse
 import requests
 
 from SecuritySm import get_d_id
-from src.push.wechat import send_wechat_notification
+from push.wechat import send_wechat_notification
 
 token_save_name = 'TOKEN.txt'
 app_code = '4ca99fa6b56cc2ba'
