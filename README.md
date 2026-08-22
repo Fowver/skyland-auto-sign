@@ -183,25 +183,25 @@ TOKEN和日志应该都会被存储在MAA根路径下
 
 每个面板可能创建方式不太一样，不展示了
 
-<a name="wechat_notification"></a>
+<a name="feishu_notification"></a>
 
-## 微信通知
+## 飞书通知
 
-本脚本支持通过企业微信机器人发送签到结果通知。
+本脚本支持通过飞书自定义机器人发送签到结果通知。
 
 ### 如何配置
 
-1.  **创建企业微信机器人**
-    - 在企业微信群聊中，点击右上角的 "..." -> "添加机器人"。
-    - 选择 "新创建一个机器人"，自定义一个头像和名字。
-    - 创建完成后，你会得到一个 Webhook 地址，格式如下：`https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
+1.  **创建飞书自定义机器人**
+    - 在飞书群聊的设置中选择“群机器人”并添加自定义机器人。
+    - 创建完成后复制 Webhook 地址。
     - **请务必保管好这个地址，不要泄露给他人。**
 
 2.  **设置环境变量**
-    - 将获取到的 Webhook 地址设置为环境变量 `WECHAT_WEBHOOK_URL`。
-    - 根据你使用的部署方式，在对应的位置（如 Github Actions Secrets, 云函数环境变量，NAS 面板环境变量设置）添加此变量。
+    - 将 Webhook 地址设置为 `FEISHU_WEBHOOK_URL`。
+    - 如果机器人开启了签名校验，再将签名密钥设置为 `FEISHU_SECRET`。
+    - 根据部署方式，在对应位置（如 GitHub Actions Secrets、云函数环境变量或 NAS 面板）添加这些变量。
 
-配置完成后，每次脚本执行签到，你都会在对应的企业微信群聊中收到通知。
+配置完成后，每次脚本执行签到，你都会在对应的飞书群聊中收到通知。
 
 <a name="multiple_account"></a>
 

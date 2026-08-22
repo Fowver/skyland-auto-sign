@@ -11,7 +11,6 @@ from urllib import parse
 import requests
 
 from SecuritySm import get_d_id
-from push.wechat import send_wechat_notification
 
 token_save_name = 'TOKEN.txt'
 app_code = '4ca99fa6b56cc2ba'
@@ -356,8 +355,5 @@ def start():
             all_logs.append(err)
             success = False
     logging.info("签到完成！")
-
-    # 发送微信通知
-    send_wechat_notification('\n'.join(all_logs))
 
     return success, all_logs

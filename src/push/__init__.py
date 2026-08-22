@@ -2,6 +2,7 @@ import logging
 import os
 from configparser import ConfigParser
 
+from push.feishu import push_feishu
 from push.pushplus import push_pushplus
 from push.qmsg import push_qmsg
 
@@ -27,7 +28,7 @@ def load_config_to_env():
 load_config_to_env()
 
 __available_pusher = {
-
+    '飞书': push_feishu,
     'pushplus': push_pushplus,
     'QMSG': push_qmsg,
 }

@@ -29,7 +29,8 @@ jobs:
           # PASSWORD: ${{ secrets.PASSWORD }}
           TOKEN: ${{ secrets.TOKEN }}
 
-          WECHAT_WEBHOOK_URL: ${{ secrets.WECHAT_WEBHOOK_URL }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
           EXIT_WHEN_FAIL: ${{ vars.EXIT_WHEN_FAIL }}
         run: |
           python src/main.py
